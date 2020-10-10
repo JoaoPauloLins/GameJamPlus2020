@@ -7,5 +7,7 @@ public class MiniGameData : ScriptableObject
     [SerializeField]
     private float duration;
 
-
+    public float getDuration() {
+        return this.duration;
+    }
 }

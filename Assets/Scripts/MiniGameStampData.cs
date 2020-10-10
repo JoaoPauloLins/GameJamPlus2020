@@ -7,4 +7,8 @@ public class MiniGameStampData : MiniGameData
 {
     [SerializeField]
     private int numbersOfPapers;
+
+    public int getNumberOfPapers() {
+        return this.numbersOfPapers;
+    }
 }
