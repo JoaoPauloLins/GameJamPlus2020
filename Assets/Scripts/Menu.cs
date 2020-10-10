@@ -10,7 +10,7 @@ public class Menu : MonoBehaviour
     }
     public void credits()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Créditos");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
     }
     public void quit()
     {
