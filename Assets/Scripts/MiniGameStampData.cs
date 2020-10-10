@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MiniGameStamp", menuName = "Data/MiniGameStamp", order = 1)]
+[CreateAssetMenu(fileName = "MiniGameStamp", menuName = "MiniGame/Stamp", order = 1)]
 public class MiniGameStampData : MiniGameData
 {
     [SerializeField]

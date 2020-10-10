@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MiniGameController : MonoBehaviour
 {
+    [SerializeField]
+    private DayOfWorkData[] daysOfWork;
+
     private void Start()
     {
         

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MiniGameOrganize", menuName = "Data/MiniGameOrganize", order = 2)]
+[CreateAssetMenu(fileName = "MiniGameOrganize", menuName = "MiniGame/Organize", order = 2)]
 public class MiniGameOrganizeData : MiniGameData
 {
     
