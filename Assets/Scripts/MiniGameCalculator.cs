@@ -20,9 +20,9 @@ public class MiniGameCalculator : MonoBehaviour
 
     private MiniGameCalculatorData data;
 
-    private Action OnChoosingAnswer;
+    private Action OnChoosingWrongAnswer;
 
-    private Action OnOperationsFinished;
+    private Action OnChoosingRightAnswer;
 
     private int numberOfOperations;
 
@@ -31,14 +31,37 @@ public class MiniGameCalculator : MonoBehaviour
     private Operation currentOperation;
 
 
-    public void init(MiniGameCalculatorData data, Action OnChoosingAnswerHandler, Action OnOperationsFinishedHandler){
+    public void init(MiniGameCalculatorData data, Action OnChoosingRightAnswerHandler, Action OnChoosingWrongAnswerHandler){
         this.currentOperationIndex = 0;
         this.data = data;
-        currentOperation = data.getOperations()[this.currentOperationIndex];
         this.numberOfOperations = data.getCountMax();
-        this.OnChoosingAnswer = OnChoosingAnswerHandler;
-        this.OnOperationsFinished = OnOperationsFinishedHandler;
+        this.OnChoosingRightAnswer = OnChoosingRightAnswerHandler;
+        this.OnChoosingWrongAnswer = OnChoosingWrongAnswerHandler;
+
+        this.setupOperation();
+    }
+
+    private void nextOperation() {
+        this.currentOperationIndex += 1;
+        this.OnChoosingRightAnswer?.Invoke();
+        if (this.currentOperationIndex >= this.numberOfOperations) {
+            Destroy(this);
+        } else {
+            this.setupOperation();
+        }
+    }
+
+    private void setupOperation() {
+        this.currentOperation = data.getOperations()[this.currentOperationIndex];
+        this.setupQuestion();
+        this.setupAnswers();
+    }
+
+    private void setupQuestion() {
         this.textQuestion.text = currentOperation.question;
+    }
+
+    private void setupAnswers() {
         for (int i = 0; i < currentOperation.quizTopic.Count; i++)
         {
             switch (i)
@@ -58,13 +81,25 @@ public class MiniGameCalculator : MonoBehaviour
             }
         }
     }
-    public void chooseAnswer1(){
 
+    private void verifyAnswer(bool isCorrect) {
+        if (isCorrect) {
+            this.nextOperation();
+        } else {
+            this.OnChoosingWrongAnswer?.Invoke();
+            Destroy(this);
+        }
     }
-    public void chooseAnswer2(){
 
+    public void chooseAnswer1() {
+        this.verifyAnswer(this.isCorrect1);
     }
-    public void chooseAnswer3(){
 
+    public void chooseAnswer2() {
+        this.verifyAnswer(this.isCorrect2);
+    }
+
+    public void chooseAnswer3() {
+        this.verifyAnswer(this.isCorrect3);
     }
 }
