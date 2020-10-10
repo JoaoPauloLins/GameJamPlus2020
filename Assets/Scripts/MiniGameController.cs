@@ -19,6 +19,9 @@ public class MiniGameController : MonoBehaviour
     [SerializeField]
     private MiniGameStamp miniGameStampPrefab;
 
+    [SerializeField]
+    private MiniGameCalculator miniGameCalculatorPrefab;
+
     private MiniGameData[] currentsTasks;
     private MiniGameData currentTask;
 
@@ -30,7 +33,7 @@ public class MiniGameController : MonoBehaviour
         this.currentDay = 0;
         this.currentTaskIndex = 0;
         this.currentsTasks = this.GetCurrentTasks();
-        this.timeController.init(OnTimeOut);
+        this.timeController.init(OnLose);
         this.countController.init(OnCountMax);
         this.initMiniGame();
     }
@@ -61,9 +64,11 @@ public class MiniGameController : MonoBehaviour
                     break;
                 case MiniGameEnum.STAMP:
                     MiniGameStamp newMiniGameStamp = Instantiate<MiniGameStamp>(this.miniGameStampPrefab, this.miniGamesParent.transform);
-                    newMiniGameStamp.init(this.currentTask as MiniGameStampData, OnCountIncrease, OnStampPapersOff);
+                    newMiniGameStamp.init(this.currentTask as MiniGameStampData, OnCountIncrease);
                     break;
                 case MiniGameEnum.CALCULATE:
+                    MiniGameCalculator newMiniGameCalculator = Instantiate<MiniGameCalculator>(this.miniGameCalculatorPrefab, this.miniGamesParent.transform);
+                    newMiniGameCalculator.init(this.currentTask as MiniGameCalculatorData, OnCountIncrease, OnLose);
                     break;
                 case MiniGameEnum.REST:
                     break;
@@ -73,12 +78,9 @@ public class MiniGameController : MonoBehaviour
             this.countController.StartCount(this.currentTask.getCountMax());
         } else {
             // TELA DE VITÓRIA!!
+            this.timeController.stopTimer();
             Debug.Log("VOCÊ TERMINOU TODAS AS TASKS DO DIA!!!!!!!");
         }
-    }
-
-    private void OnTimeOut() {
-        Debug.Log("ACABOU O TEMPO!!!!!!!");
     }
 
     private void OnCountIncrease() {
@@ -90,7 +92,8 @@ public class MiniGameController : MonoBehaviour
         this.initMiniGame();
     }
 
-    private void OnStampPapersOff() {
-        Debug.Log("ACABOU OS PAPEIS");
+    private void OnLose() {
+        this.timeController.stopTimer();
+        Debug.Log("PERDEUUUUUUUU!");
     }
 }

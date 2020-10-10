@@ -584,6 +584,8 @@ MonoBehaviour:
   countController: {fileID: 935689414}
   miniGameStampPrefab: {fileID: 1579869098383563291, guid: 870c7559363a1964fa2f4484374da051,
     type: 3}
+  miniGameCalculatorPrefab: {fileID: 2650974915509883370, guid: 92529547ad9199c45a6b3fc07b78a90f,
+    type: 3}
 --- !u!1 &1702939740
 GameObject:
   m_ObjectHideFlags: 0
