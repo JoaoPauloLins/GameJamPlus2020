@@ -6,14 +6,7 @@ using UnityEngine;
 public class MiniGameStampData : MiniGameData
 {
     [SerializeField]
-    private int numbersOfPapers;
-
-    [SerializeField]
     private MiniGameEnum type =  MiniGameEnum.STAMP;
-
-    public int getNumberOfPapers() {
-        return this.numbersOfPapers;
-    }
 
     public override MiniGameEnum getType() {
         return this.type;

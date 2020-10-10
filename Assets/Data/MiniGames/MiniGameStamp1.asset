@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: MiniGameStamp1
   m_EditorClassIdentifier: 
   duration: 15
-  numbersOfPapers: 10
+  countMax: 20
+  type: 1

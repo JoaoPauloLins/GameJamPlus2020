@@ -11,7 +11,13 @@ public class MiniGameController : MonoBehaviour
     private GameObject miniGamesParent;
 
     [SerializeField]
-    private MiniGameStamp miniGameStamp;
+    private TimeController timeController;
+
+    [SerializeField]
+    private CountController countController;
+
+    [SerializeField]
+    private MiniGameStamp miniGameStampPrefab;
 
     private MiniGameData[] currentsTasks;
     private MiniGameData currentTask;
@@ -24,6 +30,8 @@ public class MiniGameController : MonoBehaviour
         this.currentDay = 0;
         this.currentTaskIndex = 0;
         this.currentsTasks = this.GetCurrentTasks();
+        this.timeController.init(OnTimeOut);
+        this.countController.init(OnCountMax);
         this.initMiniGame();
     }
 
@@ -51,13 +59,32 @@ public class MiniGameController : MonoBehaviour
             case MiniGameEnum.ORGANIZE:
                 break;
             case MiniGameEnum.STAMP:
-                MiniGameStamp newMiniGameStamp = Instantiate<MiniGameStamp>(this.miniGameStamp, this.miniGamesParent.transform);
-                newMiniGameStamp.init(this.currentTask as MiniGameStampData);
+                MiniGameStamp newMiniGameStamp = Instantiate<MiniGameStamp>(this.miniGameStampPrefab, this.miniGamesParent.transform);
+                newMiniGameStamp.init(this.currentTask as MiniGameStampData, OnCountIncrease, OnStampPapersOff);
                 break;
             case MiniGameEnum.CALCULATE:
                 break;
             case MiniGameEnum.REST:
                 break;
         }
+
+        this.timeController.setTime(this.currentTask.getDuration());
+        this.countController.StartCount(this.currentTask.getCountMax());
+    }
+
+    private void OnTimeOut() {
+        Debug.Log("ACABOU O TEMPO!!!!!!!");
+    }
+
+    private void OnCountIncrease() {
+        this.countController.SetCountText();
+    }
+
+    private void OnCountMax() {
+        Debug.Log("VOCÊ BATEU A META!!!!!!!!");
+    }
+
+    private void OnStampPapersOff() {
+        Debug.Log("ACABOU OS PAPEIS");
     }
 }
