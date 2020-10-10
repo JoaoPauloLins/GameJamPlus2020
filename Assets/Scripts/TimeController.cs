@@ -33,6 +33,11 @@ public class TimeController : MonoBehaviour
         }
     }
 
+    private void timeOut() {
+        this.OnTimeOut?.Invoke();
+        this.gameStarted = false;
+    }
+
     public void init(Action OnTimeOutHandler) {
         this.OnTimeOut = OnTimeOutHandler;
     }
@@ -43,8 +48,7 @@ public class TimeController : MonoBehaviour
         this.gameStarted = true;
     }
 
-    private void timeOut() {
-        this.OnTimeOut?.Invoke();
+    public void stopTimer() {
         this.gameStarted = false;
     }
 }
