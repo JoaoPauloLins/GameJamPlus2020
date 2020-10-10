@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MiniGameCalculator", menuName = "MiniGame/Calculator", order = 3)]
 public class MiniGameRestData : MiniGameData
 {
-    
+    private MiniGameEnum type =  MiniGameEnum.REST;
 }
