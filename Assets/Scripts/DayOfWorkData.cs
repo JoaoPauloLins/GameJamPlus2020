@@ -7,4 +7,8 @@ public class DayOfWorkData : ScriptableObject
 {
     [SerializeField]
     private MiniGameData[] tasks;
+
+    public MiniGameData[] getTasks() {
+        return this.tasks;
+    }
 }

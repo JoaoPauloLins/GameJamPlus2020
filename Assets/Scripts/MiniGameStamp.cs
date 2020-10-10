@@ -8,7 +8,7 @@ public class MiniGameStamp : MonoBehaviour
 
     private int currentNumbersOfPapers;
 
-    private void init(MiniGameStampData data) {
+    public void init(MiniGameStampData data) {
         this.data = data;
         // instanciar os sprites papéis
         this.currentNumbersOfPapers = data.getNumberOfPapers();
