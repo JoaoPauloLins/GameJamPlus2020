@@ -25,6 +25,7 @@ public class MiniGameStamp : MonoBehaviour
         this.OnStamp?.Invoke();
         if (this.currentNumbersOfPapers <= 0) {
             OnPapersOff?.Invoke();
+            Destroy(this);
         }
     }
 }

@@ -10,7 +10,8 @@ public class MiniGameData : ScriptableObject
     [SerializeField]
     private int countMax;
 
-    private MiniGameEnum type;
+    [SerializeField]
+    protected MiniGameEnum type;
 
     public float getDuration() {
         return this.duration;

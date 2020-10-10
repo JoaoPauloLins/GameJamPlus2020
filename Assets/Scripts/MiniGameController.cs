@@ -53,23 +53,28 @@ public class MiniGameController : MonoBehaviour
 
     private void initMiniGame() {
         this.currentTask = this.GetCurrentTask();
-        MiniGameEnum currentType = this.currentTask.getType();
-        switch (currentType)
-        {
-            case MiniGameEnum.ORGANIZE:
-                break;
-            case MiniGameEnum.STAMP:
-                MiniGameStamp newMiniGameStamp = Instantiate<MiniGameStamp>(this.miniGameStampPrefab, this.miniGamesParent.transform);
-                newMiniGameStamp.init(this.currentTask as MiniGameStampData, OnCountIncrease, OnStampPapersOff);
-                break;
-            case MiniGameEnum.CALCULATE:
-                break;
-            case MiniGameEnum.REST:
-                break;
-        }
+        if (this.currentTask != null) {
+            MiniGameEnum currentType = this.currentTask.getType();
+            switch (currentType)
+            {
+                case MiniGameEnum.ORGANIZE:
+                    break;
+                case MiniGameEnum.STAMP:
+                    MiniGameStamp newMiniGameStamp = Instantiate<MiniGameStamp>(this.miniGameStampPrefab, this.miniGamesParent.transform);
+                    newMiniGameStamp.init(this.currentTask as MiniGameStampData, OnCountIncrease, OnStampPapersOff);
+                    break;
+                case MiniGameEnum.CALCULATE:
+                    break;
+                case MiniGameEnum.REST:
+                    break;
+            }
 
-        this.timeController.setTime(this.currentTask.getDuration());
-        this.countController.StartCount(this.currentTask.getCountMax());
+            this.timeController.setTime(this.currentTask.getDuration());
+            this.countController.StartCount(this.currentTask.getCountMax());
+        } else {
+            // TELA DE VITÓRIA!!
+            Debug.Log("VOCÊ TERMINOU TODAS AS TASKS DO DIA!!!!!!!");
+        }
     }
 
     private void OnTimeOut() {
@@ -81,7 +86,8 @@ public class MiniGameController : MonoBehaviour
     }
 
     private void OnCountMax() {
-        Debug.Log("VOCÊ BATEU A META!!!!!!!!");
+        this.currentTaskIndex += 1;
+        this.initMiniGame();
     }
 
     private void OnStampPapersOff() {

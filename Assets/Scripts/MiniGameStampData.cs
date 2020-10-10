@@ -5,9 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MiniGameStamp", menuName = "MiniGame/Stamp", order = 1)]
 public class MiniGameStampData : MiniGameData
 {
-    [SerializeField]
-    private MiniGameEnum type =  MiniGameEnum.STAMP;
-
     public override MiniGameEnum getType() {
         return this.type;
     }

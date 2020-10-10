@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MiniGameOrganize", menuName = "MiniGame/Organize", order = 2)]
 public class MiniGameOrganizeData : MiniGameData
 {
-    private MiniGameEnum type =  MiniGameEnum.ORGANIZE;
+    
 }
