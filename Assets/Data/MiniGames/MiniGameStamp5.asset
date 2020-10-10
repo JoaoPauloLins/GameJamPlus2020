@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23685977d90c9df4b9b2e441785159af, type: 3}
-  m_Name: MiniGameStamp1
+  m_Name: MiniGameStamp5
   m_EditorClassIdentifier: 
-  duration: 10
-  countMax: 20
+  duration: 15
+  countMax: 60
   type: 1

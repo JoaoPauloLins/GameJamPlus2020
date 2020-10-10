@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23685977d90c9df4b9b2e441785159af, type: 3}
   m_Name: MiniGameStamp2
   m_EditorClassIdentifier: 
-  duration: 15
-  countMax: 25
+  duration: 10
+  countMax: 30
   type: 1
