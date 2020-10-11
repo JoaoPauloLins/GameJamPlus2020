@@ -301,8 +301,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Artistas
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cb4f8a709e5ef124a89de8e25f4cc2d8, type: 2}
+  m_sharedMaterial: {fileID: -3453101789069346940, guid: cb4f8a709e5ef124a89de8e25f4cc2d8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -842,8 +843,9 @@ MonoBehaviour:
 
     Lucas Welton'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cb4f8a709e5ef124a89de8e25f4cc2d8, type: 2}
+  m_sharedMaterial: {fileID: -3453101789069346940, guid: cb4f8a709e5ef124a89de8e25f4cc2d8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -975,8 +977,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Carlos Augusto
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cb4f8a709e5ef124a89de8e25f4cc2d8, type: 2}
+  m_sharedMaterial: {fileID: -3453101789069346940, guid: cb4f8a709e5ef124a89de8e25f4cc2d8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1108,8 +1111,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Music/Sound Designer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cb4f8a709e5ef124a89de8e25f4cc2d8, type: 2}
+  m_sharedMaterial: {fileID: -3453101789069346940, guid: cb4f8a709e5ef124a89de8e25f4cc2d8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1241,8 +1245,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Programmers
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cb4f8a709e5ef124a89de8e25f4cc2d8, type: 2}
+  m_sharedMaterial: {fileID: -3453101789069346940, guid: cb4f8a709e5ef124a89de8e25f4cc2d8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1374,8 +1379,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Jo\xE3o Paulo Lins"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cb4f8a709e5ef124a89de8e25f4cc2d8, type: 2}
+  m_sharedMaterial: {fileID: -3453101789069346940, guid: cb4f8a709e5ef124a89de8e25f4cc2d8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1507,8 +1513,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Producer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cb4f8a709e5ef124a89de8e25f4cc2d8, type: 2}
+  m_sharedMaterial: {fileID: -3453101789069346940, guid: cb4f8a709e5ef124a89de8e25f4cc2d8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1773,8 +1780,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Dimitri Marinovic\nEdgard Coutinho\nJo\xE3o Paulo Lins"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cb4f8a709e5ef124a89de8e25f4cc2d8, type: 2}
+  m_sharedMaterial: {fileID: -3453101789069346940, guid: cb4f8a709e5ef124a89de8e25f4cc2d8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1882,7 +1890,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.9}
   m_AnchorMax: {x: 0.5, y: 0.9}
-  m_AnchoredPosition: {x: 0, y: 181}
+  m_AnchoredPosition: {x: 0, y: -5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2121304292
@@ -1906,8 +1914,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: CREDITS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cb4f8a709e5ef124a89de8e25f4cc2d8, type: 2}
+  m_sharedMaterial: {fileID: -3453101789069346940, guid: cb4f8a709e5ef124a89de8e25f4cc2d8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
