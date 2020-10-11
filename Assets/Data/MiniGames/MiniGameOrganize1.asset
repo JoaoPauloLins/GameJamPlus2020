@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68f0c10404cb9c54588c64c6a032b3be, type: 3}
-  m_Name: DayOfWork1
+  m_Script: {fileID: 11500000, guid: 049ba6b3ef3fe6a408b0e50aa91f4d2e, type: 3}
+  m_Name: MiniGameOrganize1
   m_EditorClassIdentifier: 
-  tasks:
-  - {fileID: 11400000, guid: b07d1a5742d624441afa51ebf71fb925, type: 2}
+  duration: 20
+  countMax: 7
+  type: 0
+  penQtd: 2
+  clipQtd: 3
+  postItQtd: 2

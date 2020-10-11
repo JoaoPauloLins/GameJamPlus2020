@@ -31,6 +31,9 @@ public class MiniGameController : MonoBehaviour
     [SerializeField]
     private MiniGameCalculator miniGameCalculatorPrefab;
 
+    [SerializeField]
+    private MiniGameOrganize miniGameOrganizePrefab;
+
     private MiniGameData[] currentsTasks;
     private MiniGameData currentTask;
 
@@ -75,6 +78,7 @@ public class MiniGameController : MonoBehaviour
             switch (this.currentType)
             {
                 case MiniGameEnum.ORGANIZE:
+                    this.infoMiniGame.setMiniGameInfo("ORGANIZE", "Your desk is a mess! Put each object in the box with the same object's color!!");
                     break;
                 case MiniGameEnum.STAMP:
                     this.infoMiniGame.setMiniGameInfo("STAMP", "Stamp all the documents before the time runs out!!");
@@ -97,6 +101,8 @@ public class MiniGameController : MonoBehaviour
         switch (this.currentType)
         {
             case MiniGameEnum.ORGANIZE:
+                MiniGameOrganize newMiniGameOrganize = Instantiate<MiniGameOrganize>(this.miniGameOrganizePrefab, this.miniGamesParent.transform);
+                newMiniGameOrganize.init(this.currentTask as MiniGameOrganizeData, OnCountIncrease);
                 break;
             case MiniGameEnum.STAMP:
                 MiniGameStamp newMiniGameStamp = Instantiate<MiniGameStamp>(this.miniGameStampPrefab, this.miniGamesParent.transform);
