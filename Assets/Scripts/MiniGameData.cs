@@ -5,6 +5,9 @@ using UnityEngine;
 public class MiniGameData : ScriptableObject
 {
     [SerializeField]
+    private AudioClip music;
+
+    [SerializeField]
     private float duration;
 
     [SerializeField]
@@ -19,6 +22,10 @@ public class MiniGameData : ScriptableObject
 
     public int getCountMax() {
         return this.countMax;
+    }
+
+    public AudioClip getMusic() {
+        return this.music;
     }
 
     public virtual MiniGameEnum getType() {

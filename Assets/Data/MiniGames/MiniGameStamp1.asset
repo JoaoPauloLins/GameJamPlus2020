@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23685977d90c9df4b9b2e441785159af, type: 3}
   m_Name: MiniGameStamp1
   m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: 1d589f62ea3048d46a72621095666a7a, type: 3}
   duration: 10
   countMax: 20
   type: 1

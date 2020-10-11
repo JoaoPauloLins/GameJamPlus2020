@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049ba6b3ef3fe6a408b0e50aa91f4d2e, type: 3}
   m_Name: MiniGameOrganize1
   m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: 1d589f62ea3048d46a72621095666a7a, type: 3}
   duration: 20
   countMax: 7
   type: 0
