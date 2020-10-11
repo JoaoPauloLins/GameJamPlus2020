@@ -8,7 +8,14 @@ public class MiniGameStamp : MonoBehaviour
     private MiniGameStampData data;
     private int currentNumbersOfPapers;
 
+    private AudioSource audioSource;
+
     private Action OnStamp;
+
+    private void Start()
+    {
+        this.audioSource = GetComponent<AudioSource>();
+    }
 
     public void init(MiniGameStampData data, Action OnStampHandler) {
         this.data = data;
@@ -20,6 +27,7 @@ public class MiniGameStamp : MonoBehaviour
     public void stampPaper() {
         this.currentNumbersOfPapers -= 1;
         this.OnStamp?.Invoke();
+        this.audioSource.Play();
         if (this.currentNumbersOfPapers <= 0) {
             Destroy(this.gameObject);
         }
