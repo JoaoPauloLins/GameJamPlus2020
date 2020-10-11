@@ -1980,6 +1980,8 @@ MonoBehaviour:
     type: 3}
   miniGameCalculatorPrefab: {fileID: 2650974915509883370, guid: 92529547ad9199c45a6b3fc07b78a90f,
     type: 3}
+  miniGameOrganizePrefab: {fileID: 4405183904243363104, guid: 4212ce783bdedbd48939278a02f66b03,
+    type: 3}
 --- !u!1 &1296714755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,7 +2432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5.9810004}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 28.000023, y: -147.00009}
+  m_AnchoredPosition: {x: 28, y: -147.00009}
   m_SizeDelta: {x: 434.648, y: 212.85486}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1702939742
