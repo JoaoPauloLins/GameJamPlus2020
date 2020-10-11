@@ -20,6 +20,9 @@ public class MiniGameController : MonoBehaviour
     private InfoMiniGame infoMiniGame;
 
     [SerializeField]
+    private Defeat defeat;
+
+    [SerializeField]
     private MiniGameStamp miniGameStampPrefab;
 
     [SerializeField]
@@ -35,6 +38,7 @@ public class MiniGameController : MonoBehaviour
 
     private void Start()
     {
+        this.defeat.gameObject.SetActive(false);
         this.currentDay = 0;
         this.currentTaskIndex = 0;
         this.currentsTasks = this.GetCurrentTasks();
@@ -112,13 +116,14 @@ public class MiniGameController : MonoBehaviour
     }
 
     private void OnCountMax() {
+        this.timeController.stopTimer();
         this.currentTaskIndex += 1;
         this.nextMiniGame();
     }
 
     private void OnLose() {
         this.timeController.stopTimer();
-        Debug.Log("PERDEUUUUUUUU!");
+        this.defeat.gameObject.SetActive(true);
     }
 
     private void OnInfoTimeOut() {
