@@ -23,6 +23,9 @@ public class MiniGameController : MonoBehaviour
     private Defeat defeat;
 
     [SerializeField]
+    private Victory victory;
+
+    [SerializeField]
     private MiniGameStamp miniGameStampPrefab;
 
     [SerializeField]
@@ -39,6 +42,7 @@ public class MiniGameController : MonoBehaviour
     private void Start()
     {
         this.defeat.gameObject.SetActive(false);
+        this.victory.gameObject.SetActive(false);
         this.currentDay = 0;
         this.currentTaskIndex = 0;
         this.currentsTasks = this.GetCurrentTasks();
@@ -84,9 +88,8 @@ public class MiniGameController : MonoBehaviour
             this.showInfoMiniGame();
             this.infoMiniGame.startInfoMiniGame();
         } else {
-             // TELA DE VITÓRIA!!
             this.timeController.stopTimer();
-            Debug.Log("VOCÊ TERMINOU TODAS AS TASKS DO DIA!!!!!!!");
+            this.victory.gameObject.SetActive(true);
         }
     }
 
