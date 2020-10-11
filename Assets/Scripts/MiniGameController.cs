@@ -17,6 +17,9 @@ public class MiniGameController : MonoBehaviour
     private CountController countController;
 
     [SerializeField]
+    private InfoMiniGame infoMiniGame;
+
+    [SerializeField]
     private MiniGameStamp miniGameStampPrefab;
 
     [SerializeField]
@@ -24,6 +27,8 @@ public class MiniGameController : MonoBehaviour
 
     private MiniGameData[] currentsTasks;
     private MiniGameData currentTask;
+
+    private MiniGameEnum currentType;
 
     private int currentDay;
     private int currentTaskIndex;
@@ -35,7 +40,8 @@ public class MiniGameController : MonoBehaviour
         this.currentsTasks = this.GetCurrentTasks();
         this.timeController.init(OnLose);
         this.countController.init(OnCountMax);
-        this.initMiniGame();
+        this.infoMiniGame.init(OnInfoTimeOut);
+        this.nextMiniGame();
     }
 
     private MiniGameData[] GetCurrentTasks() {
@@ -54,33 +60,51 @@ public class MiniGameController : MonoBehaviour
         }
     }
 
-    private void initMiniGame() {
+    private void nextMiniGame() {
         this.currentTask = this.GetCurrentTask();
         if (this.currentTask != null) {
-            MiniGameEnum currentType = this.currentTask.getType();
-            switch (currentType)
+            this.currentType = this.currentTask.getType();
+            switch (this.currentType)
             {
                 case MiniGameEnum.ORGANIZE:
                     break;
                 case MiniGameEnum.STAMP:
-                    MiniGameStamp newMiniGameStamp = Instantiate<MiniGameStamp>(this.miniGameStampPrefab, this.miniGamesParent.transform);
-                    newMiniGameStamp.init(this.currentTask as MiniGameStampData, OnCountIncrease);
+                    this.infoMiniGame.setMiniGameInfo("STAMP", "Stamp all the documents before the time runs out!!");
                     break;
                 case MiniGameEnum.CALCULATE:
-                    MiniGameCalculator newMiniGameCalculator = Instantiate<MiniGameCalculator>(this.miniGameCalculatorPrefab, this.miniGamesParent.transform);
-                    newMiniGameCalculator.init(this.currentTask as MiniGameCalculatorData, OnCountIncrease, OnLose);
+                    this.infoMiniGame.setMiniGameInfo("CALCULATE", "Your calculator is broken! Chose the correct answer according to the operation on your calculator!");
                     break;
                 case MiniGameEnum.REST:
                     break;
             }
-
-            this.timeController.setTime(this.currentTask.getDuration());
-            this.countController.StartCount(this.currentTask.getCountMax());
+            this.showInfoMiniGame();
+            this.infoMiniGame.startInfoMiniGame();
         } else {
-            // TELA DE VITÓRIA!!
+             // TELA DE VITÓRIA!!
             this.timeController.stopTimer();
             Debug.Log("VOCÊ TERMINOU TODAS AS TASKS DO DIA!!!!!!!");
         }
+    }
+
+    private void initMiniGame() {
+        switch (this.currentType)
+        {
+            case MiniGameEnum.ORGANIZE:
+                break;
+            case MiniGameEnum.STAMP:
+                MiniGameStamp newMiniGameStamp = Instantiate<MiniGameStamp>(this.miniGameStampPrefab, this.miniGamesParent.transform);
+                newMiniGameStamp.init(this.currentTask as MiniGameStampData, OnCountIncrease);
+                break;
+            case MiniGameEnum.CALCULATE:
+                MiniGameCalculator newMiniGameCalculator = Instantiate<MiniGameCalculator>(this.miniGameCalculatorPrefab, this.miniGamesParent.transform);
+                newMiniGameCalculator.init(this.currentTask as MiniGameCalculatorData, OnCountIncrease, OnLose);
+                break;
+            case MiniGameEnum.REST:
+                break;
+        }
+
+        this.timeController.setTime(this.currentTask.getDuration());
+        this.countController.StartCount(this.currentTask.getCountMax());
     }
 
     private void OnCountIncrease() {
@@ -89,11 +113,24 @@ public class MiniGameController : MonoBehaviour
 
     private void OnCountMax() {
         this.currentTaskIndex += 1;
-        this.initMiniGame();
+        this.nextMiniGame();
     }
 
     private void OnLose() {
         this.timeController.stopTimer();
         Debug.Log("PERDEUUUUUUUU!");
+    }
+
+    private void OnInfoTimeOut() {
+        this.hideInfoMiniGame();
+        this.initMiniGame();
+    }
+
+    private void showInfoMiniGame() {
+        this.infoMiniGame.gameObject.SetActive(true);
+    }
+
+    private void hideInfoMiniGame() {
+        this.infoMiniGame.gameObject.SetActive(false);
     }
 }
