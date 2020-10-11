@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class MiniGameOrganize : MonoBehaviour
 {
-    [SerializeField] OrganizeItem clipPrefab;
-    [SerializeField] OrganizeItem postItPrefab;
-    [SerializeField] OrganizeItem penPrefab;
-    [SerializeField] RectTransform boxBlue;
-    [SerializeField] RectTransform boxPurple;
-    [SerializeField] RectTransform boxRed;
-    [SerializeField] Transform itemAreaTransform;
-    [SerializeField] RectTransform itemAreaRectTransform;
+    [SerializeField] private AudioSource musicAudioSource;
+    [SerializeField] private OrganizeItem clipPrefab;
+    [SerializeField] private OrganizeItem postItPrefab;
+    [SerializeField] private OrganizeItem penPrefab;
+    [SerializeField] private RectTransform boxBlue;
+    [SerializeField] private RectTransform boxPurple;
+    [SerializeField] private RectTransform boxRed;
+    [SerializeField] private Transform itemAreaTransform;
+    [SerializeField] private RectTransform itemAreaRectTransform;
 
     private MiniGameOrganizeData data;
 
@@ -24,7 +25,14 @@ public class MiniGameOrganize : MonoBehaviour
         this.data = data;
         this.itemsOrganized = 0;
         this.OnItemOrganized = OnItemOrganizedHandler;
+        this.playMusic(data.getMusic());
         this.instantiateItems();
+    }
+
+    private void playMusic(AudioClip music) {
+        this.musicAudioSource.loop = true;
+        this.musicAudioSource.clip = music;
+        this.musicAudioSource.Play();
     }
 
     private void instantiateItems() {

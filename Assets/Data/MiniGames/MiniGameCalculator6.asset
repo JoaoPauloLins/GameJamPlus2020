@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a821e00f40d63b46917da0ae0df16c2, type: 3}
   m_Name: MiniGameCalculator6
   m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: 5527269dd3d836f4cb2ede81041dc259, type: 3}
   duration: 20
   countMax: 3
   type: 2

@@ -5,31 +5,40 @@ using UnityEngine;
 
 public class MiniGameStamp : MonoBehaviour
 {
+    [SerializeField]
+    private AudioSource musicAudioSource;
+    
     private MiniGameStampData data;
     private int currentNumbersOfPapers;
 
-    private AudioSource audioSource;
+    private AudioSource sfxAudioSource;
 
     private Action OnStamp;
 
     private void Start()
     {
-        this.audioSource = GetComponent<AudioSource>();
+        this.sfxAudioSource = GetComponent<AudioSource>();
     }
 
     public void init(MiniGameStampData data, Action OnStampHandler) {
         this.data = data;
-        // instanciar os sprites papéis
         this.currentNumbersOfPapers = data.getCountMax();
         this.OnStamp = OnStampHandler;
+        this.playMusic(data.getMusic());
     }
 
     public void stampPaper() {
         this.currentNumbersOfPapers -= 1;
         this.OnStamp?.Invoke();
-        this.audioSource.Play();
+        this.sfxAudioSource.Play();
         if (this.currentNumbersOfPapers <= 0) {
             Destroy(this.gameObject);
         }
+    }
+
+    private void playMusic(AudioClip music) {
+        this.musicAudioSource.loop = true;
+        this.musicAudioSource.clip = music;
+        this.musicAudioSource.Play();
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class MiniGameCalculator : MonoBehaviour
 {
+    [SerializeField]
+    private AudioSource musicAudioSource;
     [SerializeField] private TextMeshProUGUI textAnswer1;
 
     [SerializeField] private TextMeshProUGUI textAnswer2;
@@ -37,8 +39,14 @@ public class MiniGameCalculator : MonoBehaviour
         this.numberOfOperations = data.getCountMax();
         this.OnChoosingRightAnswer = OnChoosingRightAnswerHandler;
         this.OnChoosingWrongAnswer = OnChoosingWrongAnswerHandler;
-
+        this.playMusic(data.getMusic());
         this.setupOperation();
+    }
+
+    private void playMusic(AudioClip music) {
+        this.musicAudioSource.loop = true;
+        this.musicAudioSource.clip = music;
+        this.musicAudioSource.Play();
     }
 
     private void nextOperation() {
