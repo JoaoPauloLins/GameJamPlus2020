@@ -8,4 +8,9 @@ public class Defeat : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
     }
+
+    public void home()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+    }
 }
