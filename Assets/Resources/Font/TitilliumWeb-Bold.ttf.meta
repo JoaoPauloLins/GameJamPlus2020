@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 28e7f9d32c89fa24cac320b978679311
+guid: ed7c977d1b1755d488e1ef70bcdf62b9
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,12 +8,10 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: DS-Digital
+  fontName: Titillium Web
   fontNames:
-  - DS-Digital
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 16674b94f5657be4dacb0308f9d6d2b2, type: 3}
-  - {fileID: 12800000, guid: f54bf8bec342c064bb5947f14ace4ee7, type: 3}
+  - Titillium Web
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

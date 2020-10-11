@@ -45,7 +45,7 @@ public class MiniGameCalculator : MonoBehaviour
         this.currentOperationIndex += 1;
         this.OnChoosingRightAnswer?.Invoke();
         if (this.currentOperationIndex >= this.numberOfOperations) {
-            Destroy(this);
+            Destroy(this.gameObject);
         } else {
             this.setupOperation();
         }
@@ -87,7 +87,7 @@ public class MiniGameCalculator : MonoBehaviour
             this.nextOperation();
         } else {
             this.OnChoosingWrongAnswer?.Invoke();
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 
