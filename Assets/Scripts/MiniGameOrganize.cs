@@ -18,7 +18,11 @@ public class MiniGameOrganize : MonoBehaviour
 
     private Action OnItemOrganized;
 
+    
+
     private int itemsOrganized;
+
+    
 
     public void init(MiniGameOrganizeData data, Action OnItemOrganizedHandler) {
         this.data = data;
