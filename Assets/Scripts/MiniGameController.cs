@@ -131,6 +131,10 @@ public class MiniGameController : MonoBehaviour
     }
 
     private void OnLose() {
+        foreach (Transform children in this.miniGamesParent.transform)
+        {
+            Destroy(children.gameObject);
+        }
         this.timeController.stopTimer();
         this.defeat.gameObject.SetActive(true);
     }
