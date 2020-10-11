@@ -10,33 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a821e00f40d63b46917da0ae0df16c2, type: 3}
-  m_Name: MiniGameCalculator1
+  m_Name: MiniGameCalculator6
   m_EditorClassIdentifier: 
   duration: 20
   countMax: 3
   type: 2
   operations:
-  - question: 2+2
+  - question: (2+5)x(4-3)
     quizTopic:
-    - answer: 4
+    - answer: 8
+      isCorrect: 0
+    - answer: 7
       isCorrect: 1
     - answer: 6
       isCorrect: 0
-    - answer: 80
-      isCorrect: 0
-  - question: 5+7
+  - question: (54/9)+5
     quizTopic:
-    - answer: 14
+    - answer: 21
       isCorrect: 0
-    - answer: 12
-      isCorrect: 1
+    - answer: 13
+      isCorrect: 0
     - answer: 11
-      isCorrect: 0
-  - question: 7+7
-    quizTopic:
-    - answer: 15
-      isCorrect: 0
-    - answer: 18
-      isCorrect: 0
-    - answer: 14
       isCorrect: 1
+  - question: (36/6)-(18/3)
+    quizTopic:
+    - answer: 3
+      isCorrect: 0
+    - answer: 0
+      isCorrect: 1
+    - answer: 5
+      isCorrect: 0
