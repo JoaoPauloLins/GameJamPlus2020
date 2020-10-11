@@ -8,4 +8,9 @@ public class Victory : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
+
+    public void playAgain()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }
