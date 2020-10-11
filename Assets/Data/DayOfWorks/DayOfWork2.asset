@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DayOfWork2
   m_EditorClassIdentifier: 
   tasks:
-  - {fileID: 11400000, guid: 67b6f06e95811f545a5dec65fb024c13, type: 2}
-  - {fileID: 11400000, guid: a264d9e46e31b1d44bcf1c0774214615, type: 2}
-  - {fileID: 11400000, guid: 47eeec4824c789a40a0e9e49217cf0a0, type: 2}
+  - {fileID: 11400000, guid: b07d1a5742d624441afa51ebf71fb925, type: 2}
+  - {fileID: 11400000, guid: c8ab83a2ef4878642a7f4f34d03f6c46, type: 2}
+  - {fileID: 11400000, guid: 8c42093626817294db2c57a861b30f4f, type: 2}
