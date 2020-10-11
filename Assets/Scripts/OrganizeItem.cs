@@ -13,8 +13,13 @@ public class OrganizeItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     private bool isMovable;
 
+    private AudioSource clips, pens, postIts;
+
     private void Start() {
         this.isMovable = true;
+        this.clips = GetComponent<AudioSource>();
+        this.pens = GetComponent<AudioSource>();
+        this.postIts = GetComponent<AudioSource>();
     }
 
     public void init(RectTransform boxRectTransform, Action OnCorrectItemPositionHandler) {
@@ -51,6 +56,9 @@ public class OrganizeItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             float distance = Vector2.Distance(itemFinalPos, boxPos);
             if (distance <= minimalDistance) {
                 OnCorrectItemPosition?.Invoke();
+                this.clips.Play();
+                this.pens.Play();
+                this.postIts.Play();
                 this.isMovable = false;
             }
         }

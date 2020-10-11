@@ -32,6 +32,13 @@ public class MiniGameCalculator : MonoBehaviour
 
     private Operation currentOperation;
 
+    private AudioSource audioSource;
+
+
+    public void Start()
+    {
+        this.audioSource = GetComponent<AudioSource>();
+    }
 
     public void init(MiniGameCalculatorData data, Action OnChoosingRightAnswerHandler, Action OnChoosingWrongAnswerHandler){
         this.currentOperationIndex = 0;
@@ -52,6 +59,7 @@ public class MiniGameCalculator : MonoBehaviour
     private void nextOperation() {
         this.currentOperationIndex += 1;
         this.OnChoosingRightAnswer?.Invoke();
+        this.audioSource.Play();
         if (this.currentOperationIndex >= this.numberOfOperations) {
             Destroy(this.gameObject);
         } else {
@@ -73,7 +81,7 @@ public class MiniGameCalculator : MonoBehaviour
         for (int i = 0; i < currentOperation.quizTopic.Count; i++)
         {
             switch (i)
-            {  
+            {
                 case 0:
                     this.textAnswer1.text = currentOperation.quizTopic[i].answer;
                     this.isCorrect1 = currentOperation.quizTopic[i].isCorrect;
