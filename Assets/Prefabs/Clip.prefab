@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemRectTransform: {fileID: 2289343968538112771}
-  minimalDistance: 40
+  minimalDistance: 70
 --- !u!82 &1171945665603527980
 AudioSource:
   m_ObjectHideFlags: 0
