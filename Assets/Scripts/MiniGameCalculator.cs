@@ -8,6 +8,9 @@ public class MiniGameCalculator : MonoBehaviour
 {
     [SerializeField]
     private AudioSource musicAudioSource;
+
+    [SerializeField]
+    private AudioClip paperAudioClip;
     [SerializeField] private TextMeshProUGUI textAnswer1;
 
     [SerializeField] private TextMeshProUGUI textAnswer2;
@@ -59,7 +62,7 @@ public class MiniGameCalculator : MonoBehaviour
     private void nextOperation() {
         this.currentOperationIndex += 1;
         this.OnChoosingRightAnswer?.Invoke();
-        this.audioSource.Play();
+        this.audioSource.PlayOneShot(this.paperAudioClip);
         if (this.currentOperationIndex >= this.numberOfOperations) {
             Destroy(this.gameObject);
         } else {
